@@ -21,7 +21,7 @@
   </thead>
   <tbody>
     <% @events.each do |event| %>
-      <% if event.day == "12/09/2015" %>
+      <% if event.day == @days[1] %>
       <tr>
         <td>
           <%= "#{event.start} - #{event.end}" %>
