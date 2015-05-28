@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+table{
+  border: thin solid black;
+  border-collapse: collapse;
+}
+
+th,
+td{
+  border: thin solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.keynote{
+  background-color: red;
+}
+.coffee{
+  background-color: pink;
+}
+.poster{
+  background-color: lightblue;
+}
+.party{
+  background-color: violet;
+}
+
+.lunch{
+  background-color: #d3d3d3;
+}
