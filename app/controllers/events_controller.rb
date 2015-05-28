@@ -10,6 +10,6 @@ class EventsController < ApplicationController
   private
   def set_event
     @events = Event.all
-    @tracks = @events.map {|event| event.track if event.track != ("Lunch" || "Party")}.uniq.compact
+    @tracks = @events.map {|event| event.track if event.track != ("Lunch" || "Party")}.uniq.compact.sort()
   end
 end
