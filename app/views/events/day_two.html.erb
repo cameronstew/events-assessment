@@ -1,0 +1,94 @@
+<p>
+  <%= link_to "Day 1", "/" %> Day 2
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+      </th>
+      <% @tracks.each do |track| %>
+      <% unless track == "Keynote" || track == "Party" || track == "Coffee Breaks"%>
+      <th>
+        <%= track %>
+      </th>
+      <% end %>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <% if event.day == "12/09/2015" %>
+      <tr>
+        <td>
+          <%= "#{event.start} - #{event.end}" %>
+        </td>
+        <% case event.track %>
+        <% when "Keynote" %>
+        <td class="keynote"><%= event.name %></td>
+        <td class="keynote"><%= event.name %></td>
+        <td class="keynote"><%= event.name %></td>
+        <td class="keynote"><%= event.name %></td>
+        <td class="keynote"><%= event.name %></td>
+        <% when "Coffee Breaks" %>
+        <% if event.name == "Coffee Break" %>
+          <td class="coffee"><%= event.name %></td>
+          <td class="coffee"><%= event.name %></td>
+          <td class="coffee"><%= event.name %></td>
+          <td class="coffee"><%= event.name %></td>
+          <td class="coffee"><%= event.name %></td>
+          <% else %>
+            <td class="poster"><%= event.name %></td>
+            <td class="poster"><%= event.name %></td>
+            <td class="poster"><%= event.name %></td>
+            <td class="poster"><%= event.name %></td>
+            <td class="poster"><%= event.name %></td>
+          <% end %>
+        <% when "Party" %>
+        <td class="party"><%= event.name %></td>
+        <td class="party"><%= event.name %></td>
+        <td class="party"><%= event.name %></td>
+        <td class="party"><%= event.name %></td>
+        <td class="party"><%= event.name %></td>
+        <% when "Lunch" %>
+        <td class="lunch"><%= event.name %></td>
+        <td class="lunch"><%= event.name %></td>
+        <td class="lunch"><%= event.name %></td>
+        <td class="lunch"><%= event.name %></td>
+        <td class="lunch"><%= event.name %></td>
+        <% when "Track 4 - Biometrics" %>
+        <td><%= event.name %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <% when "Track 1 - Pattern Recognition" %>
+        <td></td>
+        <td><%= event.name %> </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <% when "Track 2 - Image, Speech, and Signal Processing" %>
+        <td></td>
+        <td></td>
+        <td><%= event.name %></td>
+        <td></td>
+        <td></td>
+        <% when "Track 3 - Document Analysis" %>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= event.name %> </td>
+        <td></td>
+        <% when "Track 5 - Bioinformatics" %>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= event.name %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
